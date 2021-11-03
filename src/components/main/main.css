@@ -1,0 +1,52 @@
+.employee_cards {
+    max-width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.about_us_text {
+    display: flex;
+}
+
+.about_us_perevags, .about_us_problems {
+    display: flex;
+    flex-direction: column;
+}
+
+.card_img {
+    width: 350px;
+    height: 300px;
+}
+
+.title_container {
+    padding: 5%;
+    padding-bottom: 5%;
+    display: flex;
+    justify-content: center;
+}
+
+.title {
+    font-size: 36px;
+    font-weight: bold;
+
+}
+
+.aboutAss_wrapper {
+    display: flex;
+    justify-content: space-around;
+}
+
+.about_us_text span {
+    font-size: 24px;
+    padding: 20px;
+}
+
+.about_us_perevagi {
+    font-weight: bold;
+}
+
+.about_us_main {
+    font-size: 24px;
+    padding: 15px;
+}

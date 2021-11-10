@@ -1,19 +1,15 @@
 .contacts {
     display: flex;
     flex-direction: column;
-    width: 100%;
     
 }
 
 .footer {
     margin-top: 50px;
     background-color: #0fa33b;
+    width: 100%;
 }
 
-.footer_container {
-    display: flex;
-    justify-content: space-around;
-}
 
 .copyright {
     padding: 10px 0;
@@ -27,8 +23,10 @@
 .footer_container {
     font-size: 18px;
     color: white;
-    padding-left: 200px;
-    padding-right: 200px;
+    width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
 }
 
 .footer_container ul {
@@ -45,15 +43,46 @@
     text-decoration: none;
     font-size: 18px;
     color: white;
-    padding-left: 200px;
-    padding-right: 200px;
+    transition: all 500ms ease;
 }
 
 .footer_container a:hover {
-    color: black;
+    color: yellow;
 }
 
 .contacts span {
     padding: 10px;
+    width: max-content;
+}
 
+.socialIcons {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
+    width: 100%;
+}
+
+.social_item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px #fff solid;
+    padding: 1px;
+    border-radius: 10px;
+    transition: all 500ms ease;
+}
+
+.social_item:hover {
+    background-color: #fff;
+
+}
+
+.social_item svg{
+    transition: all 500ms ease;
+}
+
+.social_item:hover svg {
+    cursor: pointer;
+    fill: #0fa33b;
 }

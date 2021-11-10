@@ -40,6 +40,10 @@ export default function Slider() {
                         <img 
                         src={process.env.PUBLIC_URL + `/Imgs/img${index + 1}.jpg`} 
                         />
+                        <div className="banner_text">
+                            <span>Заправляй повний бак на Євронафта та отримуй знижки до 5% на будь-яке пальне</span>
+                        </div>
+
                     </div>
                 )
             })}

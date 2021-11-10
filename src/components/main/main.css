@@ -1,5 +1,5 @@
 .employee_cards {
-    max-width: 80%;
+    max-width: 1140px;
     margin: auto;
     display: flex;
     justify-content: space-between;
@@ -14,6 +14,7 @@
     flex-direction: column;
 }
 
+
 .card_img {
     width: 350px;
     height: 300px;
@@ -24,17 +25,28 @@
     padding-bottom: 5%;
     display: flex;
     justify-content: center;
+    
 }
 
 .title {
     font-size: 36px;
     font-weight: bold;
+    text-align: center;
+}
 
+.aboutAss {
+    max-width: 1140px;
+    margin: 0 auto;
 }
 
 .aboutAss_wrapper {
+    width: 100%;
+}
+
+.about_us_text {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .about_us_text span {
@@ -49,4 +61,41 @@
 .about_us_main {
     font-size: 24px;
     padding: 15px;
+}
+
+.employee_text {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+}
+
+.employee_name {
+    text-align: center;
+    font-weight: bold;
+    padding: 5px;
+    font-size: 24px;
+}
+
+.employee_about {
+    font-size: 18px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.about_us_smth {
+    width: 400px;
+}
+
+.googleMap {
+    
+    padding-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+.bullets {
+    color: rgb(92, 141, 92);
+    font-weight: bold;
 }

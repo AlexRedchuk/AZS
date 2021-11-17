@@ -1,11 +1,28 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import './Slider.css'
 import BtnSlider from './BtnSlider'
 import dataSlider from './dataSlider'
 
-export default function Slider() {
-
-    const [slideIndex, setSlideIndex] = useState(1)
+export default function Slider(props) {
+    const { handleClose } = props;
+    const [slideIndex, setSlideIndex] = useState(1);
+    const timeoutRef = React.useRef(null);
+    function resetTimeout() {
+        if (timeoutRef.current) {
+          clearTimeout(timeoutRef.current);
+        }
+      }
+    
+    useEffect(() => {
+        resetTimeout();
+        timeoutRef.current = setTimeout(() => nextSlide(),
+          5000
+        );
+        return () => {
+            resetTimeout();
+          };
+    }, [slideIndex]);
+      
 
     const nextSlide = () => {
         if(slideIndex !== dataSlider.length){
@@ -40,9 +57,16 @@ export default function Slider() {
                         <img 
                         src={process.env.PUBLIC_URL + `/Imgs/img${index + 1}.jpg`} 
                         />
-                        <div className="banner_text">
-                            <span>Заправляй повний бак на Євронафта та отримуй знижки до 5% на будь-яке пальне</span>
-                        </div>
+                        { obj.hasButton ? (
+                            <div onClick={handleClose} className="slider_button">
+                                Підпишись на оновлення
+                            </div>
+                        ) : null}
+                        { obj.subTitle ? 
+                        (<div className="banner_text">
+                            <span>{obj.subTitle}</span>
+                        </div>) : null }
+                        
 
                     </div>
                 )

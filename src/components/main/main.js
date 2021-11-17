@@ -5,9 +5,11 @@ import SimpleMap from "../GoogleMap/googleMap";
 import Footer from '../Footer/footer';
 import ScrollTop from '../ScrollTop/scrollTop';
 import useWindowDimensions from '../hooks/useWindowDimensions';
+import Dialog from '../Dialog/dialog';
 
 const Main = () => {
-    const [showScroll, setShowScroll] = useState(false)
+    const [showScroll, setShowScroll] = useState(false);
+    const [dialogOpen, setDialogOpen] = useState(true);
     const checkScrollTop = () => {    
        if (!showScroll && window.pageYOffset > 400){
           setShowScroll(true)    
@@ -18,8 +20,9 @@ const Main = () => {
     window.addEventListener('scroll', checkScrollTop);
     return (
     <div className="main">
+        { dialogOpen && (<Dialog handleClose={() => setDialogOpen(false)} />)}
         <div id="services" className="slider">
-            <Slider />
+            <Slider handleClose={() => {setDialogOpen(true)}} />
         </div>
         <div className="content_container">
             <div id="employees" className="employees">
@@ -89,7 +92,7 @@ const Main = () => {
            <Footer />
         </div>
         {
-            showScroll ? <ScrollTop /> : null
+            showScroll ? <ScrollTop handleClose={() => setDialogOpen(true)} /> : null
         }
         
     </div>)
